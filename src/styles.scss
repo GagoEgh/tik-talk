@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../public/styles/font.scss';
+@import '../public/styles/color.scss';
 
 body{
     font-family: 'JetBrains Mono', sans-serif;
+    background-color: var(--color-black);
+    background-image: url('../public/images/Bitmap.png');
+    background-repeat: no-repeat;
+    background-position-x: 100%; 
 }
