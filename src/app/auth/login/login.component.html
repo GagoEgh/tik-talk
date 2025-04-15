@@ -1,18 +1,26 @@
 <div class="container">
-    <form class="login">
+    <form class="login" [formGroup]="loginForm" (ngSubmit)="send()">
         <h1>Вход</h1>
         <label class="login-label">
             <p>Telegram username</p> 
             <div class="input-block text">
-                <input type="text" class="login-data" placeholder="Введите логин">
+                <input 
+                    type="text" 
+                    class="login-data" 
+                    placeholder="Введите логин"
+                    formControlName="login">
                 <img src="icons/telegram.svg" class="telegram">
             </div>
         </label>
         <label class="login-label">
             <p>Пароль</p>
             <div class="input-block password">
-                <input type="password" class="login-data" placeholder="Введите пароль">
-                <img src="icons/eye-off.svg" class="eye-off">
+                <input 
+                    class="login-data" 
+                    placeholder="Введите пароль"
+                    [type]="eyeOn()?'text':'password'" 
+                    formControlName="password">
+                <img [src]="eyeOn()?'icons/visibility.svg':'icons/eye-off.svg'" class="eye-off" (click)="changeVisibility()">
             </div>
         </label>
         <button type="submit" class="btn">Войти</button>
